@@ -11,6 +11,7 @@ class TestSlipperySlot {
 		int array[] = s.pullTheLever();
 		assertTrue(5, array.length);
 	}
+	//
 	/*@Test elementsInTheValidRangeTest() {
 		SlipperySlot s = new SlipperySlot();
 		
