@@ -3,6 +3,15 @@ import java.util.Random;
 
 public class BetterSlot {
 	
+	public static void main(String[] args)
+	{
+		System.out.println("starting...");
+		BetterSlot b = new BetterSlot();
+		b.pullTheLever();
+		System.out.println("done.");
+		
+	}
+	
 	//required methods
 	int[] pullTheLever()
 	{
@@ -13,6 +22,8 @@ public class BetterSlot {
 			arr[i] = r.nextInt(50) + 1;
 		}
 		payOff(arr);
+		//int[] arr = new int[] {1, 2, 1, 1, 1};
+		
 		return arr;
 	}
 	int payOff(int[] values)
@@ -42,7 +53,7 @@ public class BetterSlot {
 			pay += 3;
 		
 		//return total payoff
-		System.out.println("Pay = " + pay);
+		
 		return pay;
 	}
 	
@@ -64,7 +75,7 @@ public class BetterSlot {
 	{
 		int matches = 0;
 		int i = 0;
-		while(values[0] == values[i] && matches < 4 && i < values.length)
+		while(i < values.length && values[0] == values[i] && matches < 4)
 		{
 			matches++;
 			i++;
@@ -76,7 +87,7 @@ public class BetterSlot {
 		
 		int matches2 = 0;
 		int j = 1;
-		while(values[1] == values[j] && matches2 < 4 && j < values.length)
+		while(j < values.length && values[1] == values[j] && matches2 < 4)
 		{
 			matches2++;
 			j++;
@@ -92,7 +103,7 @@ public class BetterSlot {
 	{
 		int matches = 0;
 		int i = 0;
-		while(values[0] == values[i] && matches < 3 && i < values.length)
+		while(i < values.length && values[0] == values[i] && matches < 3)
 		{
 			matches++;
 			i++;
@@ -104,7 +115,7 @@ public class BetterSlot {
 		{
 			int matches2 = 0;
 			int j = 2;
-			while(values[2] == values[j] && matches2 < 3 && j < values.length)
+			while(j < values.length && values[2] == values[j] && matches2 < 3)
 			{
 				matches2++;
 				j++;
@@ -119,7 +130,7 @@ public class BetterSlot {
 		{
 			int matches3 = 0;
 			int k = 3;
-			while(values[3] == values[k] && matches3 < 2 && k < values.length)
+			while(k < values.length && values[3] == values[k] && matches3 < 2)
 			{
 				matches3++;
 				k++;
@@ -138,7 +149,7 @@ public class BetterSlot {
 		//check if first 3 match
 		int matches = 0;
 		int i = 0;
-		while(values[0] == values[i] && matches < 3 && i < values.length)
+		while(i < values.length && values[0] == values[i] && matches < 3)
 		{
 			matches++;
 			i++;
@@ -150,7 +161,7 @@ public class BetterSlot {
 		//check if middle 3 match
 		int matches2 = 0;
 		int j = 1;
-		while(values[1] == values[j] && matches2 < 3 && j < values.length)
+		while(j < values.length && values[1] == values[j] && matches2 < 3)
 		{
 			matches2++;
 			j++;
@@ -162,7 +173,7 @@ public class BetterSlot {
 		//check if last 3 match
 		int matches3 = 0;
 		int k = 2;
-		while(values[2] == values[k] && matches3 < 3 && k < values.length)
+		while(k < values.length && values[2] == values[k] && matches3 < 3)
 		{
 			matches3++;
 			k++;
@@ -187,18 +198,17 @@ public class BetterSlot {
 		return false;
 	}
 	
-	//coonditions 6-8
+	//conditions 6-8
 	
 	//6
 	boolean perfectSquare(int[] values)
 	{
 		for(int i = 0; i < values.length; i++)
 		{
-			for(int j = 1; i*i <= values[i]; j++)
-			{
-				if(values[i]%j == 0 && values[i]/j == j)
-					return true;
-			}
+			double y = Math.sqrt(values[i]);
+			
+			if(Math.floor(y) == Math.ceil(y))
+				return true;
 		}
 		return false;
 	}
