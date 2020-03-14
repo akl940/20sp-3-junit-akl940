@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class BetterSlot {
 	
@@ -125,7 +126,7 @@ public class BetterSlot {
 			}
 			if(matches3 <= 1)
 				return false;
-			if(matches2 == 2)
+			if(matches3 == 2)
 				return true; //first 3 match and last 2 match
 		}
 		return false;
