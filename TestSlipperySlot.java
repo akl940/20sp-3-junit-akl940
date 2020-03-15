@@ -168,7 +168,7 @@ class TestSlipperySlot {
 	@DisplayName("A power of 2; two others match")
 	void pow2AndTwoMatching() {
 		SlipperySlot s = new SlipperySlot();
-		int array[] = new int[] {5, 8, 5, 42, 10};
+		int array[] = new int[] {5, 8, 5, 41, 10};
 	
 		assertEquals(13, s.payOff(array));
 	}
